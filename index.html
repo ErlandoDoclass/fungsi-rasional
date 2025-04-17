@@ -3,170 +3,159 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ATMATH - Fungsi Rasional Interaktif</title>
+    <title>Pembahasan Soal ATM Matematika</title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
       body {
-        background-color: #0a0a0a;
-        color: white;
+        background: linear-gradient(135deg, #0f0f0f, #1e293b);
+        color: #f3f4f6;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .section-card {
+        background: rgba(30, 41, 59, 0.9);
+        border: 1px solid #3b82f6;
+        border-radius: 1rem;
+        padding: 2rem;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+        transition: transform 0.3s ease;
+      }
+      .section-card:hover {
+        transform: translateY(-5px) scale(1.01);
+      }
+      .formula {
+        max-width: 100%;
+        margin: 1rem auto;
+        display: block;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+      .highlight {
+        color: #38bdf8;
+        font-weight: 600;
       }
     </style>
   </head>
-  <body class="font-sans">
-    <header class="bg-black py-6 text-center">
-      <h1 class="text-3xl font-bold text-green-400">
-        ATMATH - Fungsi Rasional Interaktif
-      </h1>
-      <p class="text-gray-400">
-        Masukkan kartu, tarik soal, scan QR, dan pelajari!
-      </p>
+  <body class="p-6">
+    <header class="text-center mb-12">
+      <h1 class="text-5xl font-bold text-blue-400 glow">📘 ATM Matematika</h1>
+      <p class="text-xl text-gray-300 mt-2" id="typed"></p>
     </header>
 
-    <div
-      id="atm-entry"
-      class="transition-opacity duration-700 opacity-100 flex justify-center items-center h-screen bg-black fixed inset-0 z-50"
-    >
-      <div class="text-center">
-        <img
-          src="https://i.imgur.com/wUqF6qx.png"
-          alt="Kartu ATM"
-          class="w-40 animate-bounce mx-auto"
-        />
-        <p class="text-green-400 mt-4 text-lg">🎴 Tarik kartu untuk mulai!</p>
-        <button
-          onclick="startATM()"
-          class="mt-4 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded shadow-md"
-        >
-          Masukkan Kartu
-        </button>
-      </div>
-    </div>
+    <section class="text-center mb-8">
+      <button
+        onclick="Swal.fire('Tip', 'Gunakan panah bawah untuk melihat pembahasan lebih lanjut 📖', 'info')"
+        class="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-full text-white shadow-md transition"
+      >
+        💡 Petunjuk Penggunaan
+      </button>
+    </section>
 
-    <main class="p-6 max-w-4xl mx-auto">
-      <!-- Pembahasan Asimtot -->
-      <section id="asimtot" class="mb-10">
-        <h2 class="text-2xl font-semibold text-blue-400 mb-4">
-          📌 Apa itu Asimtot?
-        </h2>
-        <p class="mb-4">
-          Asimtot adalah garis yang didekati grafik fungsi tetapi tidak pernah
-          disentuh. Ada dua jenis utama dalam fungsi rasional:
-          <strong>asimtot tegak</strong> dan <strong>asimtot mendatar</strong>.
-        </p>
-        <ul class="list-disc list-inside text-gray-300">
-          <li>🔹 <strong>Tegak:</strong> ketika penyebut = 0</li>
-          <li>
-            🔹 <strong>Mendatar:</strong> tergantung derajat pembilang dan
-            penyebut
-          </li>
-        </ul>
-      </section>
+    <!-- Soal 1 -->
+    <section class="section-card">
+      <h2 class="text-2xl font-semibold text-blue-300 mb-4">
+        🔹 Contoh Soal 1
+      </h2>
+      <p class="mb-1">Diketahui fungsi rasional berikut:</p>
+      <p>
+        Tentukan <span class="highlight">asimtot dan domain</span> dari fungsi
+        rasional.
+      </p>
+      <img src="soal1.jpg" alt="Soal 1" class="formula" />
 
-      <!-- Soal & Pembahasan -->
-      <section id="pembahasan" class="mb-10">
-        <h2 class="text-2xl font-semibold text-yellow-300 mb-4">
-          🔍 Contoh Soal & Pembahasan
-        </h2>
-        <p class="mb-2">
-          <strong>Soal:</strong> Tentukan asimtot tegak dan mendatar dari fungsi
-          <code>f(x) = (2x + 1)/(x - 3)</code>
-        </p>
-        <p class="text-green-300">🔑 <strong>Pembahasan:</strong></p>
-        <ul class="list-decimal list-inside text-gray-300">
-          <li>
-            Penyebut = 0 jika <code>x - 3 = 0</code> →
-            <strong>x = 3</strong> (Asimtot tegak)
-          </li>
-          <li>
-            Derajat pembilang = derajat penyebut → lihat koefisien →
-            <strong>y = 2</strong> (Asimtot mendatar)
-          </li>
-        </ul>
-      </section>
+      <h3 class="text-xl text-green-400 mt-6 mb-4">
+        Langkah-langkah Penyelesaian:
+      </h3>
+      <p class="mb-1">
+        1. Tentukan <span class="highlight">domain</span> dari fungsi rasional.
+      </p>
+      <p class="text-sm">
+        Domain fungsi rasional adalah semua nilai 𝑥 kecuali yang membuat
+        penyebut nol, karena itu menyebabkan fungsi tak terdefinisi.
+      </p>
+      <img src="domain1.jpg" alt="Domain Soal 1" class="formula" />
 
-      <!-- Grafik Interaktif -->
-      <section class="mb-10">
-        <h2 class="text-2xl font-semibold text-purple-400 mb-4">
-          📈 Grafik Fungsi f(x) = (2x + 1)/(x - 3)
-        </h2>
-        <canvas id="myChart" width="400" height="300"></canvas>
-      </section>
+      <p>2. Tentukan asimtot vertikal dan mendatar.</p>
+      <img src="asimtot1.jpg" alt="Asimtot Soal 1" class="formula" />
+    </section>
 
-      <!-- Kuis Mini -->
-      <section class="mb-10">
-        <h2 class="text-2xl font-semibold text-pink-400 mb-4">🎯 Mini Kuis</h2>
-        <p class="mb-2">
-          Apa asimtot mendatar dari fungsi
-          <code>f(x) = (3x^2 + 2)/(x^2 - 4)</code>?
-        </p>
-        <select id="quiz-answer" class="text-black p-2 rounded">
-          <option value="">Pilih jawaban</option>
-          <option value="1">y = 1</option>
-          <option value="3">y = 3</option>
-          <option value="0">y = 0</option>
-        </select>
-        <button
-          onclick="checkAnswer()"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2 rounded"
-        >
-          Cek Jawaban
-        </button>
-        <p id="result" class="mt-2 text-green-300"></p>
-      </section>
-    </main>
+    <!-- Soal 2 -->
+    <section class="section-card">
+      <h2 class="text-2xl font-semibold text-blue-300 mb-4">
+        🔹 Contoh Soal 2
+      </h2>
+      <p>Diketahui fungsi:</p>
+      <img src="gambar-soal-2.png" alt="Soal 2" class="formula" />
+
+      <h3 class="text-xl text-green-400 mt-6 mb-2">
+        Langkah-langkah Penyelesaian:
+      </h3>
+      <p>1. Periksa derajat pembilang dan penyebut.</p>
+      <img
+        src="analisis-derajat-soal-2.png"
+        alt="Analisis Derajat Soal 2"
+        class="formula"
+      />
+
+      <p>2. Lakukan pembagian jika diperlukan.</p>
+      <img src="pembagian-soal-2.png" alt="Pembagian Soal 2" class="formula" />
+
+      <p>3. Tentukan jenis asimtot dan simpulkan bentuk grafik.</p>
+      <img
+        src="kesimpulan-soal-2.png"
+        alt="Kesimpulan Soal 2"
+        class="formula"
+      />
+    </section>
+
+    <!-- Soal 3 -->
+    <section class="section-card">
+      <h2 class="text-2xl font-semibold text-blue-300 mb-4">
+        🔹 Contoh Soal 3
+      </h2>
+      <p>Fungsi berikut diberikan:</p>
+      <img src="gambar-soal-3.png" alt="Soal 3" class="formula" />
+
+      <h3 class="text-xl text-green-400 mt-6 mb-2">
+        Langkah-langkah Penyelesaian:
+      </h3>
+      <p>
+        1. Tentukan <span class="highlight">domain</span> dan titik-titik
+        kritis.
+      </p>
+      <img src="domain-soal-3.png" alt="Domain Soal 3" class="formula" />
+
+      <p>2. Gunakan pembagian polinomial.</p>
+      <img
+        src="pembagian-soal-3.png"
+        alt="Pembagian Polinomial Soal 3"
+        class="formula"
+      />
+
+      <p>3. Identifikasi asimtot yang terbentuk.</p>
+      <img src="asimtot-soal-3.png" alt="Asimtot Soal 3" class="formula" />
+    </section>
+
+    <footer class="text-center mt-12 text-gray-500 text-sm">
+      <p>&copy; 2025 ATM Matematika | Disusun oleh Tim Kreatif 💡</p>
+    </footer>
 
     <script>
-      function startATM() {
-        const atm = document.getElementById("atm-entry");
-        atm.classList.add("opacity-0");
-        setTimeout(() => atm.classList.add("hidden"), 700);
-      }
-
-      // Grafik dengan Chart.js
-      const ctx = document.getElementById("myChart").getContext("2d");
-      const data = {
-        labels: Array.from({ length: 100 }, (_, i) => i / 10),
-        datasets: [
-          {
-            label: "f(x) = (2x + 1)/(x - 3)",
-            data: Array.from({ length: 100 }, (_, i) => {
-              const x = i / 10;
-              return x === 3 ? null : (2 * x + 1) / (x - 3);
-            }),
-            borderColor: "rgba(255, 99, 132, 1)",
-            borderWidth: 2,
-            fill: false,
-          },
+      const typed = new Typed("#typed", {
+        strings: [
+          "Pembahasan Soal Fungsi Rasional 💡",
+          "Asimtot? Domain? Kami Jelaskan Semuanya!",
+          "ATM Matematika: Interaktif dan Edukatif 🚀",
         ],
-      };
-      new Chart(ctx, {
-        type: "line",
-        data: data,
-        options: {
-          responsive: true,
-          scales: {
-            x: { title: { display: true, text: "x" } },
-            y: { title: { display: true, text: "f(x)" } },
-          },
-        },
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
       });
-
-      // Kuis
-      function checkAnswer() {
-        const value = document.getElementById("quiz-answer").value;
-        const result = document.getElementById("result");
-        if (value === "3") {
-          result.textContent = "✅ Benar! Karena derajat sama, maka y = 3.";
-        } else if (value === "") {
-          result.textContent = "Pilih jawaban dulu ya!";
-        } else {
-          result.textContent = "❌ Salah. Coba cek kembali derajatnya.";
-        }
-      }
     </script>
   </body>
 </html>
