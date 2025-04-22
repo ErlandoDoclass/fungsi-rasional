@@ -39,24 +39,18 @@
         rasional berikut:
       </p>
       <img src="soal1.jpg" alt="Soal 1" class="formula" />
-
-      <div class="perspective">
-        <div class="flip-container mt-6">
-          <div class="card-3d" id="card1">
-            <div
-              class="card-front text-xl font-bold cursor-pointer"
-              onclick="toggleFlip(1)"
-            >
-              🔁 Klik di sini untuk Lihat Pembahasan!
-            </div>
-            <div class="card-back cursor-pointer" onclick="toggleFlip(1)">
-              <img src="domain1.jpg" alt="Domain Soal 1" class="formula" />
-              <img src="asimtot1.jpg" alt="Asimtot Soal 1" class="formula" />
-            </div>
-          </div>
-        </div>
+      <div class="text-center mt-4">
+        <button
+          onclick="keluarkanPembahasan(1)"
+          class="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-full"
+        >
+          🧾 Keluarkan Jawaban dari ATM
+        </button>
       </div>
-    </section>
+      <div id="pembahasan1" class="mt-6 slide-up">
+        <img src="domain1.jpg" alt="Domain Soal 2" class="formula" />
+        <img src="asimtot1.jpg" alt="Asimtot Soal 2" class="formula" />
+      </div>
 
     <!-- Soal 2 -->
     <section class="section-card" id="soal2">

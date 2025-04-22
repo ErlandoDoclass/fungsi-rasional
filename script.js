@@ -17,9 +17,3 @@ function keluarkanPembahasan(nomor) {
   audio.play();
 }
 
-function toggleFlip(nomor) {
-  const card = document.getElementById(`card${nomor}`);
-  card.classList.toggle("flipped");
-  const audio = new Audio("flipp.mp3");
-  audio.play();
-}
